@@ -1,13 +1,13 @@
 from fastapi import FastAPI, Depends, HTTPException, status, Request
 from sqlalchemy.orm import Session
-from .database import SessionLocal
+from app.database import SessionLocal
 from fastapi.routing import APIRoute
-from . import schemas
-from . import crud
+from app import schemas
+from app import crud
 from typing import Annotated
 from datetime import datetime, timedelta
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-from .auth_utils import (
+from app.auth_utils import (
     create_access_token,
     ACCESS_TOKEN_EXPIRE_MINUTES,
     oauth2_scheme,
