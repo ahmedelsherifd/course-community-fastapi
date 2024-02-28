@@ -9,8 +9,6 @@ class Settings(BaseSettings):
     DBHOST: str
     DBUSER: str
     DBPASS: str
-    GOOGLE_CLIENT_ID: str
-    GOOGLE_CLIENT_SECRET: str
     model_config = SettingsConfigDict(env_file=Path(__file__).parent / ".env")
 
 

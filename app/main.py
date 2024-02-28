@@ -15,7 +15,8 @@ from .auth_utils import (
     SECRET_KEY,
 )
 from jose import JWTError, jwt
-from .auth_utils import oauth
+
+# from .auth_utils import oauth
 from starlette.middleware.sessions import SessionMiddleware
 from starlette.middleware.cors import CORSMiddleware
 

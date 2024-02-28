@@ -36,16 +36,16 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None):
     return encoded_jwt
 
 
-config_data = {
-    "GOOGLE_CLIENT_ID": settings.GOOGLE_CLIENT_ID,
-    "GOOGLE_CLIENT_SECRET": settings.GOOGLE_CLIENT_SECRET,
-}
-starlette_config = Config(environ=config_data)
-oauth = OAuth(starlette_config)
+# config_data = {
+#     "GOOGLE_CLIENT_ID": settings.GOOGLE_CLIENT_ID,
+#     "GOOGLE_CLIENT_SECRET": settings.GOOGLE_CLIENT_SECRET,
+# }
+# starlette_config = Config(environ=config_data)
+# oauth = OAuth(starlette_config)
 
-CONF_URL = "https://accounts.google.com/.well-known/openid-configuration"
-oauth.register(
-    name="google",
-    server_metadata_url=CONF_URL,
-    client_kwargs={"scope": "openid email profile"},
-)
+# CONF_URL = "https://accounts.google.com/.well-known/openid-configuration"
+# oauth.register(
+#     name="google",
+#     server_metadata_url=CONF_URL,
+#     client_kwargs={"scope": "openid email profile"},
+# )
