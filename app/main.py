@@ -26,7 +26,7 @@ def custom_generate_unique_id(route: APIRoute):
 
 
 app = FastAPI(
-    title="Auction book",
+    title="Courses Community api",
     generate_unique_id_function=custom_generate_unique_id,
 )
 app.add_middleware(SessionMiddleware, secret_key="!secret")
