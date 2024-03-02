@@ -1,8 +1,8 @@
 name: Keep Repository Active
 
-on:
-  schedule:
-    - cron: '0 0 */28 * *'
+# on:
+#   schedule:
+#     - cron: '0 0 */28 * *'
 
 jobs:
   create-empty-commit:
@@ -12,17 +12,17 @@ jobs:
       contents: write
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        ref: main
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
 
-    - name: Configure Git
-      run: |
-        git config user.name 'Automatic action'
-        git config user.email 'noreply@koyeb.com'
+      - name: Configure Git
+        run: |
+          git config user.name 'Automatic action'
+          git config user.email 'noreply@koyeb.com'
 
-    - name: Create an empty commit and push
-      run: |
-        git commit --allow-empty -m "Automated empty commit to keep repo active" -m "This commit is generated automatically every few weeks to prevent GitHub Actions from being disabled due to inactivity."
-        git push origin main
+      - name: Create an empty commit and push
+        run: |
+          git commit --allow-empty -m "Automated empty commit to keep repo active" -m "This commit is generated automatically every few weeks to prevent GitHub Actions from being disabled due to inactivity."
+          git push origin main
